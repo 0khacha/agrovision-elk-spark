@@ -1,0 +1,23 @@
+{
+  "agro-spark-batch-b1" : {
+    "settings" : {
+      "index" : {
+        "routing" : {
+          "allocation" : {
+            "include" : {
+              "_tier_preference" : "data_content"
+            }
+          }
+        },
+        "number_of_shards" : "1",
+        "provided_name" : "agro-spark-batch-b1",
+        "creation_date" : "1795492463698",
+        "number_of_replicas" : "1",
+        "uuid" : "0rgPse-zTzGYbzV5rcZfCA",
+        "version" : {
+          "created" : "8537000"
+        }
+      }
+    }
+  }
+}

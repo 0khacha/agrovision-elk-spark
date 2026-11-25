@@ -1,0 +1,60 @@
+===== MISSION 7 : COHERENCE CROISEE BATCH / STREAMING / GRAPHE =====
+Historique : 51000 lignes | colonnes utilisees : parcelle=field_id, region=region
+Sommets    : 755 | id=vertex_id, type=vertex_type, region=region
+Aretes     : 2879 | src=src_id, dst=dst_id, relation=relation
+Colonne d'alerte batch : alert_flag
+Historique : 51000 lignes brutes -> 46752 lignes valides sans doublon (memes regles que le batch)
+PASS  Lignes valides retrouvees == valeur du batch -> 46752 vs 46752
+
+--- Controles batch <-> graphe ---
+PASS  Parcelles distinctes historique == parcelles du graphe -> 600 vs 600
+PASS  Toute parcelle de l'historique existe dans le graphe -> 0 orphelines
+PASS  Toute parcelle du graphe apparait dans l'historique
+PASS  Une seule region par parcelle dans l'historique -> 0 parcelles ambigues
+PASS  Region identique historique / graphe pour chaque parcelle -> 0 divergences
+PASS  Nombre de regions identique -> 6 vs 6
+PASS  Aretes IRRIGUEE_PAR : origine = parcelle -> 0
+
+--- Croisement metier par region (batch x graphe) ---
+  region=Doukkala | parcelles=104 | liens_irrigation=137 | sources=9 | lignes=8006 | alertes=537 | taux_alerte_pct=6.71 | parcelles_par_source=15.22
+  region=Fes-Meknes | parcelles=101 | liens_irrigation=136 | sources=8 | lignes=7950 | alertes=480 | taux_alerte_pct=6.04 | parcelles_par_source=17.0
+  region=Gharb | parcelles=111 | liens_irrigation=156 | sources=9 | lignes=8580 | alertes=521 | taux_alerte_pct=6.07 | parcelles_par_source=17.33
+  region=Marrakech-Safi | parcelles=96 | liens_irrigation=132 | sources=8 | lignes=7428 | alertes=457 | taux_alerte_pct=6.15 | parcelles_par_source=16.5
+  region=Oriental | parcelles=88 | liens_irrigation=111 | sources=7 | lignes=6946 | alertes=435 | taux_alerte_pct=6.26 | parcelles_par_source=15.86
+  region=Souss-Massa | parcelles=100 | liens_irrigation=131 | sources=8 | lignes=7842 | alertes=419 | taux_alerte_pct=5.34 | parcelles_par_source=16.38
+Spearman(taux d'alerte batch, parcelles par source) sur 6 regions = -0.6
+Lecture : avec si peu de regions, ce coefficient est indicatif, jamais une preuve statistique.
+
+--- Volumes du flux : produits / traites / rejetes ---
+Schema evenements valides : event_id, event_type, field_id, sensor_id, region, crop_type, event_time, soil_moisture_pct, ndvi, temperature_c, rainfall_mm, water_m3, duration_min, alert_type, severity
+    rejet BAD_EVENT_ID : 172
+    rejet BAD_EVENT_TYPE : 99
+    rejet OUT_OF_RANGE : 78
+    rejet UNKNOWN_FIELD : 75
+    rejet BAD_EVENT_TIME : 72
+Produits (lignes incoming) : 12360 | valides traites : 11504 | rejetes : 496 | ecartes (doublons + tardifs) : 360
+PASS  Flux >= 10000 evenements produits -> 12360
+PASS  Bilan des volumes coherent (produits >= valides + rejetes) -> 360
+
+--- Controles streaming <-> graphe ---
+PASS  Identifiants de parcelle du flux conformes a la convention -> 0 non conformes
+PASS  Toutes les parcelles du flux existent dans le graphe -> 0 orphelines
+PASS  Region du flux == region du graphe -> 0 divergences
+PASS  Aucun doublon (event_id, event_time) dans la sortie valide -> 0 doublons
+Types d'evenements (event_type) :
+    SENSOR_READING : 8007
+    IRRIGATION_EVENT : 2363
+    ALERT : 1134
+PASS  Au moins 3 types d'evenements
+
+--- Taux d'alerte par region : batch vs flux ---
+  Doukkala        batch=6.71%  flux=10.3%  (evts flux=1962, alertes=202)
+  Fes-Meknes      batch=6.04%  flux=10.28%  (evts flux=1877, alertes=193)
+  Gharb           batch=6.07%  flux=9.28%  (evts flux=2210, alertes=205)
+  Marrakech-Safi  batch=6.15%  flux=9.24%  (evts flux=1938, alertes=179)
+  Oriental        batch=6.26%  flux=9.39%  (evts flux=1629, alertes=153)
+  Souss-Massa     batch=5.34%  flux=10.7%  (evts flux=1888, alertes=202)
+Lecture : le flux est un echantillon synthetique distinct de l'historique ; on attend des taux du meme ordre de grandeur, pas identiques.
+
+===== BILAN =====
+Controles en echec : 0 (aucun)

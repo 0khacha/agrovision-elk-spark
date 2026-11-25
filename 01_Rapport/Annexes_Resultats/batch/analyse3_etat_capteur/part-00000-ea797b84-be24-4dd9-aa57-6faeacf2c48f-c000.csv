@@ -1,0 +1,4 @@
+sensor_status,n,taux_alerte,ndvi_moyen
+OK,42027,0.0602,0.654
+LOW_BATTERY,3299,0.0749,0.65
+MAINTENANCE,1426,0.0512,0.654

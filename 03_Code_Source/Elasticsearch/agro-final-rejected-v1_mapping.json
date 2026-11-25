@@ -1,0 +1,33 @@
+{
+  "agro-final-rejected-v1" : {
+    "mappings" : {
+      "dynamic" : "false",
+      "properties" : {
+        "@timestamp" : {
+          "type" : "date"
+        },
+        "anomaly_category" : {
+          "type" : "keyword"
+        },
+        "anomaly_detail" : {
+          "type" : "text"
+        },
+        "error_class" : {
+          "type" : "keyword"
+        },
+        "observation_id" : {
+          "type" : "keyword"
+        },
+        "raw_line" : {
+          "type" : "text"
+        },
+        "run_id" : {
+          "type" : "keyword"
+        },
+        "source_file" : {
+          "type" : "keyword"
+        }
+      }
+    }
+  }
+}

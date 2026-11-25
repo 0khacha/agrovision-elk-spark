@@ -1,0 +1,50 @@
+{
+  "agro-spark-batch-b1" : {
+    "mappings" : {
+      "properties" : {
+        "crop_type" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "humidite_moy" : {
+          "type" : "float"
+        },
+        "irrigation_l_par_ha" : {
+          "type" : "float"
+        },
+        "n_obs" : {
+          "type" : "long"
+        },
+        "n_parcelles" : {
+          "type" : "long"
+        },
+        "ndvi_moyen" : {
+          "type" : "float"
+        },
+        "pluie_totale_mm" : {
+          "type" : "float"
+        },
+        "region" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "taux_alerte" : {
+          "type" : "float"
+        },
+        "temp_moy" : {
+          "type" : "float"
+        }
+      }
+    }
+  }
+}

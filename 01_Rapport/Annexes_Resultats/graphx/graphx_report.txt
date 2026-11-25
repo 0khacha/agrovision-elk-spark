@@ -1,0 +1,75 @@
+===== MISSION 5 : CONSTRUCTION ET VERIFICATION DU GRAPHE =====
+PASS  Sommets >= 500 -> 755
+PASS  Aretes >= 2000 -> 2879
+PASS  Identifiants texte uniques -> 755 lignes / 755 distincts
+PASS  Identifiants numeriques sans collision -> 755
+PASS  Aretes vers un sommet inconnu -> 0
+PASS  Boucles -> 0
+PASS  Aretes en double -> 0
+PASS  Aretes aux extremites de type non conforme -> 0
+Sommets par type : (EXPLOITATION,106), (PARCELLE,600), (SOURCE_EAU,49)
+Aretes par relation : (EXPLOITEE_PAR,600), (IRRIGUEE_PAR,803), (VOISINE_DE,1476)
+
+===== ANALYSE 1 : DEGRES =====
+Degre par type de sommet :
+type | n | degre_moyen | min | max
+PARCELLE | 600 | 7.26 | 6 | 11
+EXPLOITATION | 106 | 5.66 | 1 | 9
+SOURCE_EAU | 49 | 16.39 | 5 | 34
+10 parcelles de plus fort degre (voisines + irrigation + exploitation) :
+sommet | type | region | sous_type | culture | degre
+FLD-175 | PARCELLE | Fes-Meknes |  | ble | 11
+FLD-467 | PARCELLE | Doukkala |  | olivier | 11
+FLD-019 | PARCELLE | Fes-Meknes |  | ble | 10
+FLD-030 | PARCELLE | Gharb |  | mais | 10
+FLD-085 | PARCELLE | Marrakech-Safi |  | ble | 10
+FLD-156 | PARCELLE | Souss-Massa |  | mais | 10
+FLD-194 | PARCELLE | Gharb |  | orge | 10
+FLD-196 | PARCELLE | Fes-Meknes |  | agrumes | 10
+FLD-205 | PARCELLE | Fes-Meknes |  | ble | 10
+FLD-225 | PARCELLE | Oriental |  | tomate | 10
+Parcelles par nombre de sources (secours) : (1,397), (2,203)
+
+===== ANALYSE 2 : SOURCES D'EAU CRITIQUES (PageRank et charge ponderee) =====
+Sources avec au moins une parcelle : 49 | sans parcelle : 0
+Top 10 par PageRank :
+source | region | type | n_parcelles | parcelles_equiv | pagerank
+WTR-009 | Marrakech-Safi | BARRAGE | 34 | 24.99 | 12.2212
+WTR-020 | Fes-Meknes | FORAGE | 31 | 23.59 | 11.7453
+WTR-038 | Oriental | FORAGE | 29 | 24.46 | 11.7453
+WTR-028 | Gharb | CANAL | 27 | 21.77 | 11.0313
+WTR-037 | Oriental | BARRAGE | 23 | 20.54 | 9.8414
+WTR-046 | Doukkala | FORAGE | 23 | 18.98 | 9.6034
+WTR-030 | Gharb | FORAGE | 26 | 15.52 | 8.8895
+WTR-008 | Souss-Massa | FORAGE | 22 | 17.25 | 8.6515
+WTR-021 | Fes-Meknes | FORAGE | 22 | 15.57 | 8.6515
+WTR-047 | Doukkala | BARRAGE | 23 | 15.23 | 8.1755
+Top 10 par charge ponderee :
+source | region | type | n_parcelles | parcelles_equiv | pagerank
+WTR-009 | Marrakech-Safi | BARRAGE | 34 | 24.99 | 12.2212
+WTR-038 | Oriental | FORAGE | 29 | 24.46 | 11.7453
+WTR-020 | Fes-Meknes | FORAGE | 31 | 23.59 | 11.7453
+WTR-028 | Gharb | CANAL | 27 | 21.77 | 11.0313
+WTR-037 | Oriental | BARRAGE | 23 | 20.54 | 9.8414
+WTR-046 | Doukkala | FORAGE | 23 | 18.98 | 9.6034
+WTR-008 | Souss-Massa | FORAGE | 22 | 17.25 | 8.6515
+WTR-013 | Marrakech-Safi | FORAGE | 19 | 15.83 | 7.6995
+WTR-007 | Souss-Massa | CANAL | 20 | 15.64 | 7.4615
+WTR-021 | Fes-Meknes | FORAGE | 22 | 15.57 | 8.6515
+Sources communes aux deux top 10 : 8 / 10
+Controle croise Python (attendu WTR-009:34, WTR-020:31, WTR-038:29) : WTR-009:34, WTR-020:31, WTR-038:29
+PASS  Top 3 identique a l'apercu Python -> WTR-009:34, WTR-020:31, WTR-038:29
+
+===== ANALYSE 3 : SECTEURS HYDRAULIQUES (Connected Components) =====
+Couche A (irrigation principale seule) : composantes (toutes) = 49 | avec au moins une parcelle = 49
+   composantes a >= 2 sources = 0 | composantes sur plusieurs regions = 0
+   5 plus grandes (parcelles, sources) : (26,1) (26,1) (24,1) (22,1) (22,1)
+   parcelles couvertes = 600
+Couche B (principale + secours) : composantes (toutes) = 6 | avec au moins une parcelle = 6
+   composantes a >= 2 sources = 6 | composantes sur plusieurs regions = 0
+   5 plus grandes (parcelles, sources) : (111,9) (104,9) (101,8) (100,8) (96,8)
+   parcelles couvertes = 600
+PASS  Couche B = composantes irrigation de l'apercu Python -> 6 vs 6
+PASS  Graphe complet = composantes Python (6 regions) -> 6 vs 6
+
+FIN : rapport ecrit dans /home/vm4/tp6_elk/results/graphx/graphx_report.txt

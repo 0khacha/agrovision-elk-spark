@@ -1,0 +1,42 @@
+{
+  "params": {
+    "vertices": "/home/vm4/tp6_elk/data/graph/vertices.csv",
+    "out_dir": "/home/vm4/tp6_elk/stream/incoming",
+    "tmp_dir": "/home/vm4/tp6_elk/stream/tmp",
+    "manifest": "/home/vm4/tp6_elk/results/stream_manifest.json",
+    "total": 12000,
+    "batch_size": 200,
+    "interval": 2.0,
+    "step_sec": 60,
+    "invalid_rate": 0.04,
+    "dup_rate": 0.03,
+    "late_rate": 0.08,
+    "max_late_min": 8.0,
+    "start_time": "2026-10-27T08:00:00",
+    "start_seq": 1,
+    "file_prefix": "batch",
+    "seed": 42
+  },
+  "new_events": 12000,
+  "total_lines": 12360,
+  "valid_distinct": 11504,
+  "invalid_total": 496,
+  "invalid_by_kind": {
+    "no_id": 101,
+    "broken_json": 71,
+    "range": 78,
+    "unknown_field": 75,
+    "bad_time": 72,
+    "bad_type": 99
+  },
+  "duplicate_lines": 360,
+  "late_events": 951,
+  "valid_by_type": {
+    "SENSOR_READING": 8007,
+    "IRRIGATION_EVENT": 2363,
+    "ALERT": 1134
+  },
+  "files": 60,
+  "valid_event_time_min": "2026-10-27T07:53:08",
+  "valid_event_time_max": "2026-10-27T08:59:58"
+}

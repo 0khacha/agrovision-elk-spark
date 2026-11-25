@@ -1,0 +1,23 @@
+{
+  "agro-graphx-sources" : {
+    "settings" : {
+      "index" : {
+        "routing" : {
+          "allocation" : {
+            "include" : {
+              "_tier_preference" : "data_content"
+            }
+          }
+        },
+        "number_of_shards" : "1",
+        "provided_name" : "agro-graphx-sources",
+        "creation_date" : "1795492491444",
+        "number_of_replicas" : "1",
+        "uuid" : "eLn_Zr6dR7iEcGJgroJe6w",
+        "version" : {
+          "created" : "8537000"
+        }
+      }
+    }
+  }
+}

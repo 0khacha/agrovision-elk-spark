@@ -1,0 +1,70 @@
+{
+  "agro-final-v1" : {
+    "mappings" : {
+      "dynamic" : "strict",
+      "properties" : {
+        "@timestamp" : {
+          "type" : "date"
+        },
+        "alert_flag" : {
+          "type" : "boolean"
+        },
+        "area_ha" : {
+          "type" : "float"
+        },
+        "crop_type" : {
+          "type" : "keyword"
+        },
+        "field_id" : {
+          "type" : "keyword"
+        },
+        "irrigation_liters" : {
+          "type" : "integer"
+        },
+        "ndvi" : {
+          "type" : "float"
+        },
+        "notes" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "observation_date" : {
+          "type" : "date",
+          "format" : "strict_date"
+        },
+        "observation_id" : {
+          "type" : "keyword"
+        },
+        "rainfall_mm" : {
+          "type" : "float"
+        },
+        "region" : {
+          "type" : "keyword"
+        },
+        "run_id" : {
+          "type" : "keyword"
+        },
+        "sensor_id" : {
+          "type" : "keyword"
+        },
+        "sensor_status" : {
+          "type" : "keyword"
+        },
+        "soil_moisture" : {
+          "type" : "float"
+        },
+        "source_file" : {
+          "type" : "keyword"
+        },
+        "temperature" : {
+          "type" : "float"
+        }
+      }
+    }
+  }
+}

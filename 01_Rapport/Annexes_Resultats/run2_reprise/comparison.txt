@@ -1,0 +1,10 @@
+PASS Evenements valides : run1 = run2                   obtenu=11504 attendu=11504
+PASS event_id presents en run1 et absents en run2       obtenu=0 attendu=0
+PASS event_id presents en run2 et absents en run1       obtenu=0 attendu=0
+PASS Rejets : run1 = run2                               obtenu=496 attendu=496
+PASS Rejets differents (ligne + raison)                 obtenu=0 attendu=0
+PASS Fenetres (dernier etat) differentes                obtenu=0 attendu=0
+
+Lots de metriques du run2 :
+  lots distincts : 31 | dernier batch_id : 30
+  (fenetre, region, batch_id) ecrits plusieurs fois (lot rejoue) : 0

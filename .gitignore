@@ -1,0 +1,15 @@
+# Vidéo de démonstration (trop lourde pour GitHub)
+02_Video/*.mp4
+
+# Archives
+*.rar
+*.zip
+*.tar.gz
+
+# Python
+__pycache__/
+*.pyc
+
+# Fichiers système
+.DS_Store
+Thumbs.db

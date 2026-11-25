@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "vertices": 755,
+  "edges": 2879,
+  "vertices_by_type": {
+    "PARCELLE": 600,
+    "SOURCE_EAU": 49,
+    "EXPLOITATION": 106
+  },
+  "edges_by_relation": {
+    "VOISINE_DE": 1476,
+    "IRRIGUEE_PAR": 803,
+    "EXPLOITEE_PAR": 600
+  },
+  "components_full": 6,
+  "components_irrigation": 6,
+  "sha256": {
+    "vertices.csv": "108067bd9bbf304d2f01c3b0167009e31da373145d01be5470c43f66773111fd",
+    "edges.csv": "f43af3c7776829aa886aac8b4548f777c16813a442c12a6245f913444fee7f90"
+  }
+}

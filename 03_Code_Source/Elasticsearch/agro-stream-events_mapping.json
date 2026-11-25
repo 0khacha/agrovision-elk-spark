@@ -1,0 +1,95 @@
+{
+  "agro-stream-events" : {
+    "mappings" : {
+      "properties" : {
+        "alert_type" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "crop_type" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "duration_min" : {
+          "type" : "float"
+        },
+        "event_id" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "event_time" : {
+          "type" : "date"
+        },
+        "event_type" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "field_id" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "ndvi" : {
+          "type" : "float"
+        },
+        "rainfall_mm" : {
+          "type" : "float"
+        },
+        "region" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "sensor_id" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "severity" : {
+          "type" : "float"
+        },
+        "soil_moisture_pct" : {
+          "type" : "float"
+        },
+        "temperature_c" : {
+          "type" : "float"
+        },
+        "water_m3" : {
+          "type" : "float"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "agro-graphx-parcelles" : {
+    "settings" : {
+      "index" : {
+        "routing" : {
+          "allocation" : {
+            "include" : {
+              "_tier_preference" : "data_content"
+            }
+          }
+        },
+        "number_of_shards" : "1",
+        "provided_name" : "agro-graphx-parcelles",
+        "creation_date" : "1795492494724",
+        "number_of_replicas" : "1",
+        "uuid" : "fvj1u1sQTGGW3qTNbXaSAg",
+        "version" : {
+          "created" : "8537000"
+        }
+      }
+    }
+  }
+}

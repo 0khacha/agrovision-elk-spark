@@ -1,0 +1,23 @@
+{
+  "agro-final-rejected-v1" : {
+    "settings" : {
+      "index" : {
+        "routing" : {
+          "allocation" : {
+            "include" : {
+              "_tier_preference" : "data_content"
+            }
+          }
+        },
+        "number_of_shards" : "1",
+        "provided_name" : "agro-final-rejected-v1",
+        "creation_date" : "1795464796415",
+        "number_of_replicas" : "1",
+        "uuid" : "YdQ5mrtfTmO-BgoyC0nTtQ",
+        "version" : {
+          "created" : "8537000"
+        }
+      }
+    }
+  }
+}

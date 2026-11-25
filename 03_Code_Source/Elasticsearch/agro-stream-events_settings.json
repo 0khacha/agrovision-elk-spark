@@ -1,0 +1,23 @@
+{
+  "agro-stream-events" : {
+    "settings" : {
+      "index" : {
+        "routing" : {
+          "allocation" : {
+            "include" : {
+              "_tier_preference" : "data_content"
+            }
+          }
+        },
+        "number_of_shards" : "1",
+        "provided_name" : "agro-stream-events",
+        "creation_date" : "1795492475086",
+        "number_of_replicas" : "1",
+        "uuid" : "TtmZdhORQXO_P4L68-gBmA",
+        "version" : {
+          "created" : "8537000"
+        }
+      }
+    }
+  }
+}

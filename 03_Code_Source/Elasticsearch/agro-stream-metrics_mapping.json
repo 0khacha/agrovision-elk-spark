@@ -1,0 +1,50 @@
+{
+  "agro-stream-metrics" : {
+    "mappings" : {
+      "properties" : {
+        "avg_ndvi" : {
+          "type" : "float"
+        },
+        "avg_soil_moisture" : {
+          "type" : "float"
+        },
+        "batch_id" : {
+          "type" : "long"
+        },
+        "n_alert" : {
+          "type" : "long"
+        },
+        "n_events" : {
+          "type" : "long"
+        },
+        "n_irrigation" : {
+          "type" : "long"
+        },
+        "n_sensor" : {
+          "type" : "long"
+        },
+        "rain_mm" : {
+          "type" : "float"
+        },
+        "region" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "water_m3" : {
+          "type" : "float"
+        },
+        "window_end" : {
+          "type" : "date"
+        },
+        "window_start" : {
+          "type" : "date"
+        }
+      }
+    }
+  }
+}

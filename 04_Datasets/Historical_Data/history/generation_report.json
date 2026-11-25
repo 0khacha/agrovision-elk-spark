@@ -1,0 +1,19 @@
+{
+  "seed": 42,
+  "distinct_records": 50000,
+  "duplicate_lines": 1000,
+  "data_lines": 51000,
+  "anomalies": 3248,
+  "anomalies_per_category": 812,
+  "anomaly_rate_pct": 6.5,
+  "fields": 600,
+  "parts": 1,
+  "id_width": 6,
+  "generation_seconds": 0.54,
+  "files": {
+    "agro_hist.csv": {
+      "bytes": 5531357,
+      "sha256": "ce35a97b82102a1d1f50a56f8c1bc6533b05a16f6e1a85569c2fe1330ebbd652"
+    }
+  }
+}

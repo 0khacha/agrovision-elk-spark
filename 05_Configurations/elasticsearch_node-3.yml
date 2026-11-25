@@ -1,0 +1,12 @@
+cluster.name: ensiasd-cluster
+node.name: node-3
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+network.host: node-3
+http.port: 9200
+transport.port: 9300
+discovery.seed_hosts:
+  - "node-1"
+  - "node-2"
+  - "node-3"
+xpack.security.enabled: false

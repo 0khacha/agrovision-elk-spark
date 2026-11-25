@@ -1,0 +1,44 @@
+{
+  "agro-graphx-sources" : {
+    "mappings" : {
+      "properties" : {
+        "n_parcelles" : {
+          "type" : "long"
+        },
+        "pagerank" : {
+          "type" : "float"
+        },
+        "parcelles_equiv" : {
+          "type" : "float"
+        },
+        "region" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "source" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "type" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        }
+      }
+    }
+  }
+}

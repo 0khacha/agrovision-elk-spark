@@ -1,0 +1,26 @@
+{
+  "agro-spark-batch-b3-capteurs" : {
+    "mappings" : {
+      "properties" : {
+        "n" : {
+          "type" : "long"
+        },
+        "ndvi_moyen" : {
+          "type" : "float"
+        },
+        "sensor_status" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "taux_alerte" : {
+          "type" : "float"
+        }
+      }
+    }
+  }
+}

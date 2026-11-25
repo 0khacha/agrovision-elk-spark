@@ -1,0 +1,23 @@
+{
+  "agro-spark-batch-b3-capteurs" : {
+    "settings" : {
+      "index" : {
+        "routing" : {
+          "allocation" : {
+            "include" : {
+              "_tier_preference" : "data_content"
+            }
+          }
+        },
+        "number_of_shards" : "1",
+        "provided_name" : "agro-spark-batch-b3-capteurs",
+        "creation_date" : "1795492469117",
+        "number_of_replicas" : "1",
+        "uuid" : "WKSjnICrTE2DwBWjGz6HpA",
+        "version" : {
+          "created" : "8537000"
+        }
+      }
+    }
+  }
+}

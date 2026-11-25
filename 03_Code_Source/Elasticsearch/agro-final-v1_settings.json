@@ -1,0 +1,23 @@
+{
+  "agro-final-v1" : {
+    "settings" : {
+      "index" : {
+        "routing" : {
+          "allocation" : {
+            "include" : {
+              "_tier_preference" : "data_content"
+            }
+          }
+        },
+        "number_of_shards" : "3",
+        "provided_name" : "agro-final-v1",
+        "creation_date" : "1795464795146",
+        "number_of_replicas" : "1",
+        "uuid" : "FQoS0aETTQ6BWNj_bzMy3w",
+        "version" : {
+          "created" : "8537000"
+        }
+      }
+    }
+  }
+}

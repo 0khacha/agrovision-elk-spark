@@ -1,0 +1,23 @@
+{
+  "agro-stream-metrics" : {
+    "settings" : {
+      "index" : {
+        "routing" : {
+          "allocation" : {
+            "include" : {
+              "_tier_preference" : "data_content"
+            }
+          }
+        },
+        "number_of_shards" : "1",
+        "provided_name" : "agro-stream-metrics",
+        "creation_date" : "1795492487398",
+        "number_of_replicas" : "1",
+        "uuid" : "C6fF7alISrW3s76lyUZJzQ",
+        "version" : {
+          "created" : "8537000"
+        }
+      }
+    }
+  }
+}
